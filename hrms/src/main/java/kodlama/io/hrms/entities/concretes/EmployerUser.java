@@ -10,18 +10,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
+@Table(name="employers_users")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="job_positions")
-public class Job {
+public class EmployerUser extends User {
 	@Id
-	@GeneratedValue
 	@Column(name="id")
-		private int id;
+	@GeneratedValue
+	private int id;
 	
-	@Column(name="position")
-		private String position;
+	@Column(name="company_name")
+	private String companyName;
+	
+	@Column(name="web_adress")
+	private String webAdress;
+	
+	@Column(name="phone")
+	private String phone;
 
 }
